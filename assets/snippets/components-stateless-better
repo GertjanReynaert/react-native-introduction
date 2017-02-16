@@ -1,0 +1,5 @@
+const FullName = ({ firstName, lastName }) => {
+  return (
+    <p>{ firstName } { lastName}</p>
+  );
+}

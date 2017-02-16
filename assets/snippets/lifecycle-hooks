@@ -1,0 +1,20 @@
+class FullName extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      full: false,
+    };
+  }
+
+  render() {
+    const { firstName, middleName, lastName } = this.props;
+
+    const name = this.state.full
+      ? \`\${firstName} \${middleName} \${lastName}\`
+      : \`\${firstName} \${lastName}\`;
+
+    return (
+      <p>{name}</p>
+    );
+  }
+}

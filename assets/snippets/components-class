@@ -1,0 +1,7 @@
+class FullName extends React.Component {
+  render() {
+    return (
+      <p>{ this.props.firstName } { this.props.lastName}</p>
+    );
+  }
+}

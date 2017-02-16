@@ -1,0 +1,5 @@
+const FullName = (props) => {
+  return (
+    <p>{ props.firstName } { props.lastName}</p>
+  );
+}

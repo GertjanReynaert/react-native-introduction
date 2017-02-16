@@ -3,12 +3,11 @@ import React from "react";
 
 // Import Spectacle Core tags
 import {
+  Appear,
   BlockQuote,
   Cite,
   CodePane,
   Deck,
-  Fill,
-  Layout,
   Heading,
   ListItem,
   List,
@@ -52,11 +51,8 @@ const theme = createTheme({
 export default class Presentation extends React.Component {
   render() {
     return (
-      <Spectacle theme={theme}>
+      <Spectacle theme={theme} bgColor="primary" textColor="secondary">
         <Deck
-          theme={theme}
-          bgColor="primary"
-          textColor="secondary"
           progress="bar"
           transition={["fade", "slide"]}
           transitionDuration={500}
@@ -92,12 +88,7 @@ export default class Presentation extends React.Component {
             <CodePane
               style={{ fontSize: 18 }}
               lang="xml"
-              source={`
-              <div>
-                <h1>Hello!</h1>
-                <h2>Good to see you here.</h2>
-              </div>
-              `}
+              source={require("raw!../assets/snippets/jsx")}
             />
           </Slide>
 
@@ -112,20 +103,7 @@ export default class Presentation extends React.Component {
             <CodePane
               style={{ fontSize: 18 }}
               lang="jsx"
-              source={`function fullName(user) {
-      return user.firstName + ' ' + user.lastName;
-    }
-
-    const user = {
-      firstName: 'Harper',
-      lastName: 'Perez'
-    };
-
-    const element = (
-      <h1>
-        Hello, {fullName(user)}!
-      </h1>
-    );        `}
+              source={require("raw!../assets/snippets/jsx-expressions")}
             />
           </Slide>
 
@@ -140,12 +118,7 @@ export default class Presentation extends React.Component {
             <CodePane
               style={{ fontSize: 18 }}
               lang="jsx"
-              source={`function getGreeting(user) {
-    if (user) {
-      return <h1>Hello, {formatName(user)}!</h1>;
-    }
-    return <h1>Hello, Stranger.</h1>;
-  } `}
+              source={require("raw!../assets/snippets/jsx-is-code")}
             />
           </Slide>
 
@@ -208,24 +181,18 @@ export default class Presentation extends React.Component {
             </Heading>
 
             <CodePane
-              style={{ fontSize: 18 }}
+              style={{ marginBottom: 30, fontSize: 18 }}
               lang="jsx"
-              source={`const FullName = (props) => {
-    return (
-      <p>{ props.firstName } { props.lastName}</p>
-    );
-  } `}
+              source={require("raw!../assets/snippets/components-stateless")}
             />
 
-            <CodePane
-              style={{ marginTop: 30, fontSize: 18 }}
-              lang="jsx"
-              source={`const FullName = ({ firstName, lastName }) => {
-    return (
-      <p>{ firstName } { lastName}</p>
-    );
-  } `}
-            />
+            <Appear>
+              <CodePane
+                style={{ fontSize: 18 }}
+                lang="jsx"
+                source={require("raw!../assets/snippets/components-stateless-better")}
+              />
+            </Appear>
           </Slide>
 
           <Slide>
@@ -239,69 +206,31 @@ export default class Presentation extends React.Component {
             <CodePane
               style={{ fontSize: 18 }}
               lang="jsx"
-              source={`class FullName extends React.Component {
-    render() {
-      return (
-        <p>{ this.props.firstName } { this.props.lastName}</p>
-      );
-    }
-  } `}
-            />
-          </Slide>
-
-          <Slide>
-            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ marginBottom: 30 }}>
-              Props & State
-            </Heading>
-
-            <CodePane
-              style={{ fontSize: 18 }}
-              lang="jsx"
-              source={`class FullName extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        full: false,
-      };
-    }
-
-    render() {
-      const { firstName, middleName, lastName } = this.props;
-
-      const name = this.state.full
-        ? \`\${firstName} \${middleName} \${lastName}\`
-        : \`\${firstName} \${lastName}\`;
-
-      return (
-        <p>{name}</p>
-      );
-    }
-  } `}
+              source={require("raw!../assets/snippets/components-class")}
             />
           </Slide>
 
           <CodeSlide
-            style={{ transform: 0, opacity: 1 }}
+            style={{ fontSize: 25 }}
             transition={[]}
-            lang="js"
-            code={`import React from 'react';
-
-  const Button = React.createClass({
-    render: () => {
-      return (
-        <button>{this.props.children}</button>
-      );
-    }
-  });
-
-  export default Button;
-            `}
+            lang="jsx"
+            code={require("raw!../assets/snippets/props-and-state")}
             ranges={[
-              { loc: [0, 200], title: "Lifecycle hooks" },
-              { loc: [0, 1], title: "The Beginning" },
-              { loc: [1, 2] },
-              { loc: [1, 2], note: "Heres a note!" }
-              //{ loc: [4, 7], image: shiaLabeoufMagicGif },
+              { loc: [0, 25], title: "Props & State" },
+              { loc: [1, 3], title: "Props" },
+              { loc: [9, 10], title: "Props" },
+              { loc: [3, 6], title: "State" },
+              { loc: [11, 14], title: "State" }
+            ]}
+          />
+
+          <CodeSlide
+            style={{ fontSize: 25 }}
+            transition={[]}
+            lang="jsx"
+            code={require("raw!../assets/snippets/lifecycle-hooks")}
+            ranges={[
+              { loc: [0, 250], title: "Lifecycle hooks" }
             ]}
           />
 
@@ -334,30 +263,6 @@ export default class Presentation extends React.Component {
               No data management
             </Heading>
           </Slide>
-
-          <CodeSlide
-            transition={[]}
-            lang="js"
-            code={`import React from 'react';
-
-  const Button = React.createClass({
-    render: () => {
-      return (
-        <button>{this.props.children}</button>
-      );
-    }
-  });
-
-  export default Button;
-            `}
-            ranges={[
-              { loc: [0, 12], title: "Walking through some code" },
-              { loc: [0, 1], title: "The Beginning" },
-              { loc: [1, 2] },
-              { loc: [1, 2], note: "Heres a note!" }
-              //{ loc: [4, 7], image: shiaLabeoufMagicGif },
-            ]}
-          />
 
           <Slide>
             <Heading size={1} lineHeight={1} style={{ marginBottom: 30 }}>
