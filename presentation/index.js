@@ -270,11 +270,44 @@ export default class Presentation extends React.Component {
             </Heading>
             <List>
               <ListItem> Framework/Library </ListItem>
-              <ListItem> jsx => xml to native views/components </ListItem>
-              <ListItem> virtual dom => virtual components </ListItem>
-              <ListItem> lifecycle hooks </ListItem>
-              <ListItem> bridge => json data communication, event bridge </ListItem>
             </List>
+          </Slide>
+
+          <Slide>
+            <Heading size={1} lineHeight={1} style={{ marginBottom: 30 }}>
+              React-Native
+            </Heading>
+            <Text>
+              jsx => xml to native views/components
+            </Text>
+          </Slide>
+
+          <Slide>
+            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ marginBottom: 30 }}>
+              Styling
+            </Heading>
+            <Text>
+              Flex box => native layout system
+              Unitless dimensions (different ppi)
+            </Text>
+          </Slide>
+
+          <Slide>
+            <Heading size={1} lineHeight={1} style={{ marginBottom: 30 }}>
+              React-Native
+            </Heading>
+            <Text>
+              virtual dom => virtual components
+            </Text>
+          </Slide>
+
+          <Slide>
+            <Heading size={1} lineHeight={1} style={{ marginBottom: 30 }}>
+              React-Native
+            </Heading>
+            <Text>
+              bridge => json data communication, event bridge
+            </Text>
           </Slide>
 
           <Slide>
@@ -290,63 +323,62 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Heading size={1}>
-              React-Native
+            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ marginBottom: 30 }}>
+              Platform specific
             </Heading>
+            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ marginBottom: 30 }}>
+              Inline ternary
+            </Heading>
+
+            <CodePane
+              style={{ fontSize: 18 }}
+              lang="js"
+              source="Platform.OS === 'android' ? 'android text' : 'ios text'"
+            />
+          </Slide>
+
+          <Slide>
+            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ marginBottom: 30 }}>
+              Platform specific
+            </Heading>
+            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ marginBottom: 30 }}>
+              Extension based
+            </Heading>
+
+            <CodePane
+              style={{ fontSize: 18 }}
+              lang="js"
+              source="import Component from './Component'"
+            />
             <List>
-              <ListItem> Platform specific </ListItem>
-              <ListItem> Small differences: platform ternary (Platform.OS === 'android' ? 'android text' : 'ios text') </ListItem>
-              <ListItem> Larger differences: extension based component switching </ListItem>
+              <ListItem>component.ios.js</ListItem>
+              <ListItem>component.android.js</ListItem>
             </List>
+            <List>
+              <ListItem>component.windows.js</ListItem>
+              <ListItem>...</ListItem>
+            </List>
+          </Slide>
+
+          <Slide>
+            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ marginBottom: 30 }}>
+              Debugging
+            </Heading>
 
             <Text>
-              {`
-              import Component from 'component'
-
-              component.ios.js
-              component.android.js
-              (
-                component.windows.js,
-                ...
-              )
-              `}
+              Set application in debug mode, open chrome devtools on the debugger localhost url,
+              use breakpoints and console.log statements
             </Text>
           </Slide>
 
-          {/* Spectacle boilerplate examples */}
-
-          <Slide transition={["zoom"]} bgColor="primary">
-            <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-              Spectacle Boilerplate
+          <Slide>
+            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ marginBottom: 30 }}>
+              RN vs Xamarin/Phonegap/...
             </Heading>
-            <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
-              open the presentation/index.js file to get started
-            </Text>
-          </Slide>
 
-          <Slide transition={["fade"]} bgColor="tertiary">
-            <Heading size={6} textColor="primary" caps>Typography</Heading>
-            <Heading size={1} textColor="secondary">Heading 1</Heading>
-            <Heading size={2} textColor="secondary">Heading 2</Heading>
-            <Heading size={3} textColor="secondary">Heading 3</Heading>
-            <Heading size={4} textColor="secondary">Heading 4</Heading>
-            <Heading size={5} textColor="secondary">Heading 5</Heading>
-            <Text size={6} textColor="secondary">Standard text</Text>
-          </Slide>
-          <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-            <Heading size={6} textColor="secondary" caps>Standard List</Heading>
-            <List>
-              <ListItem>Item 1</ListItem>
-              <ListItem>Item 2</ListItem>
-              <ListItem>Item 3</ListItem>
-              <ListItem>Item 4</ListItem>
-            </List>
-          </Slide>
-          <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-            <BlockQuote>
-              <Quote>Example Quote</Quote>
-              <Cite>Author</Cite>
-            </BlockQuote>
+            <Text>
+              Native vs Webview
+            </Text>
           </Slide>
         </Deck>
       </Spectacle>
