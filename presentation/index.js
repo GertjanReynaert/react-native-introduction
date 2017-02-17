@@ -242,38 +242,68 @@ export default class Presentation extends React.Component {
           />
 
           <Slide>
-            <Heading size={1} lineHeight={1} style={{ margin: "0 0 30px 0" }}>
+            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
               Event handling
             </Heading>
           </Slide>
 
-          <Slide notes="React.PropTypes & Flow (make reference to TypeScript)">
-            <Heading size={1} lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              Typechecking
-            </Heading>
-          </Slide>
-
           <Slide notes="State + props, context as fallback, global js context, Redux, MobX, ...">
-            <Heading size={1} lineHeight={1} style={{ margin: "0 0 30px 0" }}>
+            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
               No data management
             </Heading>
           </Slide>
 
-          <Slide>
-            <Heading size={1} lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              React-Native
+          <Slide notes="State + props, context as fallback, global js context, Redux, MobX, ...">
+            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
+              Virtual DOM
             </Heading>
-            <List>
-              <ListItem> Framework/Library </ListItem>
-            </List>
           </Slide>
 
           <Slide>
             <Heading size={1} lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              React-Native
+              React Native
             </Heading>
+          </Slide>
+
+          <Slide>
+            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
+              RN vs Xamarin/Phonegap/...
+            </Heading>
+
+            <Text>
+              Native vs Webview
+            </Text>
+          </Slide>
+
+          <Slide>
+            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
+              Virtual ...
+            </Heading>
+
+            <Text>
+              virtual dom => virtual components
+            </Text>
+          </Slide>
+
+          <Slide>
+            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
+              React Native
+            </Heading>
+
             <Text>
               jsx => xml to native views/components
+            </Text>
+          </Slide>
+
+          <Slide>
+            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
+              JS {"<=>"} Native
+            </Heading>
+
+            <Text>
+              bridge
+              Data communication via JSON
+              Events passed between Native and JS
             </Text>
           </Slide>
 
@@ -284,24 +314,6 @@ export default class Presentation extends React.Component {
             <Text>
               Flex box => native layout system
               Unitless dimensions (different ppi)
-            </Text>
-          </Slide>
-
-          <Slide>
-            <Heading size={1} lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              React-Native
-            </Heading>
-            <Text>
-              virtual dom => virtual components
-            </Text>
-          </Slide>
-
-          <Slide>
-            <Heading size={1} lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              React-Native
-            </Heading>
-            <Text>
-              bridge => json data communication, event bridge
             </Text>
           </Slide>
 
@@ -363,16 +375,6 @@ export default class Presentation extends React.Component {
             <Text>
               Set application in debug mode, open chrome devtools on the debugger localhost url,
               use breakpoints and console.log statements
-            </Text>
-          </Slide>
-
-          <Slide>
-            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              RN vs Xamarin/Phonegap/...
-            </Heading>
-
-            <Text>
-              Native vs Webview
             </Text>
           </Slide>
         </Deck>
