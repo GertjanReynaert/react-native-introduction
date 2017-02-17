@@ -4,14 +4,11 @@ import React from "react";
 // Import Spectacle Core tags
 import {
   Appear,
-  BlockQuote,
-  Cite,
   CodePane,
   Deck,
   Heading,
   ListItem,
   List,
-  Quote,
   Spectacle,
   Slide,
   Text
@@ -58,13 +55,13 @@ export default class Presentation extends React.Component {
           transitionDuration={500}
         >
           <Slide>
-            <Heading size={1} lineHeight={1} style={{ marginBottom: 30 }}>
+            <Heading size={1} lineHeight={1} style={{ margin: "0 0 30px 0" }}>
               React
             </Heading>
           </Slide>
 
           <Slide>
-            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ marginBottom: 30 }}>
+            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
               Thinking in React
             </Heading>
 
@@ -78,10 +75,13 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ marginBottom: 30 }}>
-              JSX
+            <Heading size={2} textColor="tertiary" lineHeight={1}>
+              {"<JSX />"}
             </Heading>
-            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ marginBottom: 30 }}>
+          </Slide>
+
+          <Slide>
+            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
               Templates
             </Heading>
 
@@ -93,10 +93,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ marginBottom: 30 }}>
-              JSX
-            </Heading>
-            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ marginBottom: 30 }}>
+            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
               Expressions
             </Heading>
 
@@ -108,11 +105,8 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ marginBottom: 30 }}>
-              JSX
-            </Heading>
-            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ marginBottom: 30 }}>
-              is code
+            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
+              Conditional rendering
             </Heading>
 
             <CodePane
@@ -121,6 +115,19 @@ export default class Presentation extends React.Component {
               source={require("raw!../assets/snippets/jsx-is-code")}
             />
           </Slide>
+
+          <Slide>
+            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
+              Lists and keys
+            </Heading>
+
+            <CodePane
+              style={{ fontSize: 18 }}
+              lang="jsx"
+              source={require("raw!../assets/snippets/jsx-lists-and-keys")}
+            />
+          </Slide>
+
 
           {/*<Slide
             notes={`
@@ -131,7 +138,7 @@ export default class Presentation extends React.Component {
             </ul>
             `}
           >
-            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ marginBottom: 30 }}>
+            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: '0 0 30px 0' }}>
               JSX
             </Heading>
 
@@ -155,13 +162,13 @@ export default class Presentation extends React.Component {
           </Slide>*/}
 
           {/*<Slide>
-            <Heading size={1} lineHeight={1} style={{ marginBottom: 30 }}>
+            <Heading size={1} lineHeight={1} style={{ margin: '0 0 30px 0' }}>
               Virtual DOM
             </Heading>
           </Slide>*/}
 
           <Slide>
-            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ marginBottom: 30 }}>
+            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
               Components
             </Heading>
 
@@ -173,15 +180,15 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ marginBottom: 30 }}>
+            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
               Components
             </Heading>
-            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ marginBottom: 30 }}>
+            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
               Stateless
             </Heading>
 
             <CodePane
-              style={{ marginBottom: 30, fontSize: 18 }}
+              style={{ margin: "0 0 30px 0", fontSize: 18 }}
               lang="jsx"
               source={require("raw!../assets/snippets/components-stateless")}
             />
@@ -196,11 +203,11 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ marginBottom: 30 }}>
+            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
               Components
             </Heading>
-            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ marginBottom: 30 }}>
-              Class (prefered)
+            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
+              Class
             </Heading>
 
             <CodePane
@@ -235,37 +242,25 @@ export default class Presentation extends React.Component {
           />
 
           <Slide>
-            <Heading size={1} lineHeight={1} style={{ marginBottom: 30 }}>
+            <Heading size={1} lineHeight={1} style={{ margin: "0 0 30px 0" }}>
               Event handling
             </Heading>
           </Slide>
 
-          <Slide>
-            <Heading size={1} lineHeight={1} style={{ marginBottom: 30 }}>
-              Conditional rendering
-            </Heading>
-          </Slide>
-
-          <Slide>
-            <Heading size={1} lineHeight={1} style={{ marginBottom: 30 }}>
-              Lists and keys
-            </Heading>
-          </Slide>
-
           <Slide notes="React.PropTypes & Flow (make reference to TypeScript)">
-            <Heading size={1} lineHeight={1} style={{ marginBottom: 30 }}>
+            <Heading size={1} lineHeight={1} style={{ margin: "0 0 30px 0" }}>
               Typechecking
             </Heading>
           </Slide>
 
           <Slide notes="State + props, context as fallback, global js context, Redux, MobX, ...">
-            <Heading size={1} lineHeight={1} style={{ marginBottom: 30 }}>
+            <Heading size={1} lineHeight={1} style={{ margin: "0 0 30px 0" }}>
               No data management
             </Heading>
           </Slide>
 
           <Slide>
-            <Heading size={1} lineHeight={1} style={{ marginBottom: 30 }}>
+            <Heading size={1} lineHeight={1} style={{ margin: "0 0 30px 0" }}>
               React-Native
             </Heading>
             <List>
@@ -274,7 +269,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Heading size={1} lineHeight={1} style={{ marginBottom: 30 }}>
+            <Heading size={1} lineHeight={1} style={{ margin: "0 0 30px 0" }}>
               React-Native
             </Heading>
             <Text>
@@ -283,7 +278,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ marginBottom: 30 }}>
+            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
               Styling
             </Heading>
             <Text>
@@ -293,7 +288,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Heading size={1} lineHeight={1} style={{ marginBottom: 30 }}>
+            <Heading size={1} lineHeight={1} style={{ margin: "0 0 30px 0" }}>
               React-Native
             </Heading>
             <Text>
@@ -302,7 +297,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Heading size={1} lineHeight={1} style={{ marginBottom: 30 }}>
+            <Heading size={1} lineHeight={1} style={{ margin: "0 0 30px 0" }}>
               React-Native
             </Heading>
             <Text>
@@ -323,10 +318,10 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ marginBottom: 30 }}>
+            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
               Platform specific
             </Heading>
-            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ marginBottom: 30 }}>
+            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
               Inline ternary
             </Heading>
 
@@ -338,10 +333,10 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ marginBottom: 30 }}>
+            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
               Platform specific
             </Heading>
-            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ marginBottom: 30 }}>
+            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
               Extension based
             </Heading>
 
@@ -361,7 +356,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ marginBottom: 30 }}>
+            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
               Debugging
             </Heading>
 
@@ -372,7 +367,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ marginBottom: 30 }}>
+            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
               RN vs Xamarin/Phonegap/...
             </Heading>
 
