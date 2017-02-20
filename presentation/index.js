@@ -61,20 +61,6 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              Thinking in React
-            </Heading>
-
-            <List>
-              <ListItem>Step 1: UI to component hierarchy</ListItem>
-              <ListItem>Step 2: Build A Static Version</ListItem>
-              <ListItem>Step 3: Identify the UI state</ListItem>
-              <ListItem>Step 4: Identify the place for your state</ListItem>
-              <ListItem>Step 5: Add Inverse Data Flow</ListItem>
-            </List>
-          </Slide>
-
-          <Slide>
             <Heading size={2} textColor="tertiary" lineHeight={1}>
               {"<JSX />"}
             </Heading>
@@ -225,9 +211,13 @@ export default class Presentation extends React.Component {
             ranges={[
               { loc: [0, 25], title: "Props & State" },
               { loc: [1, 3], title: "Props" },
-              { loc: [9, 10], title: "Props" },
+              { loc: [18, 19], title: "Props" },
               { loc: [3, 6], title: "State" },
-              { loc: [11, 14], title: "State" }
+              { loc: [22, 25], title: "State" },
+              { loc: [28, 29], title: "State" },
+              { loc: [8, 16], title: "State" },
+              { loc: [11, 12], title: "State" },
+              { loc: [14, 15], title: "State" }
             ]}
           />
 
@@ -377,6 +367,21 @@ export default class Presentation extends React.Component {
               use breakpoints and console.log statements
             </Text>
           </Slide>
+
+          <Slide>
+            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
+              Thinking in React
+            </Heading>
+
+            <List>
+              <ListItem>Step 1: UI to component hierarchy</ListItem>
+              <ListItem>Step 2: Build A Static Version</ListItem>
+              <ListItem>Step 3: Identify the UI state</ListItem>
+              <ListItem>Step 4: Identify the place for your state</ListItem>
+              <ListItem>Step 5: Add Inverse Data Flow</ListItem>
+            </List>
+          </Slide>
+
         </Deck>
       </Spectacle>
     );
