@@ -227,11 +227,24 @@ export default class Presentation extends React.Component {
             lang="jsx"
             code={require("raw!../assets/snippets/lifecycle-hooks")}
             ranges={[
-              { loc: [0, 250], title: "Lifecycle hooks" }
+              { loc: [0, 250], title: "Lifecycle hooks" },
+              { loc: [8, 12], note: "componentWillMount" },
+              { loc: [13, 16], note: "componentWillUnmount" },
+              { loc: [17, 21], note: "componentWillReceiveProps" },
+              { loc: [22, 29], note: "shouldComponentUpdate" },
+              { loc: [30, 33], note: "componentWillUpdate" },
+              { loc: [34, 37], note: "componentDidUpdate" },
+              { loc: [38, 42], note: "componentWillUnmount" },
+              { loc: [43, 55], note: "render" }
             ]}
           />
 
-          <Slide>
+          <Slide
+            notes={`
+            Inline (onClick, onChange, onKeyDown, onMouseOver,...)
+            Real method calls, not method names that then get dynamically invoked
+            `}
+          >
             <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
               Event handling
             </Heading>
@@ -243,13 +256,48 @@ export default class Presentation extends React.Component {
             </Heading>
           </Slide>
 
-          <Slide notes="State + props, context as fallback, global js context, Redux, MobX, ...">
+          <Slide notes="Essential for declarative nature + performance, ideal for RN abstraction">
             <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
               Virtual DOM
             </Heading>
           </Slide>
 
-          <Slide>
+          <Slide
+            notes={`
+Getting Started
+Tutorial
+Props
+State
+Style
+Height and Width
+Layout with Flexbox
+Handling Text Input
+Using a ScrollView
+Using a ListView
+Networking
+Using Navigators
+More Resources
+
+Integration With Existing Apps
+Colors
+Images
+Handling Touches
+Animations
+Accessibility
+Timers
+Direct Manipulation
+Debugging
+Testing
+Running On Device
+JavaScript Environment
+Navigation
+Performance
+Understanding the CLI
+Upgrading
+Platform Specific Code
+Gesture Responder System
+            `}
+          >
             <Heading size={1} lineHeight={1} style={{ margin: "0 0 30px 0" }}>
               React Native
             </Heading>
@@ -257,12 +305,14 @@ export default class Presentation extends React.Component {
 
           <Slide>
             <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              RN vs Xamarin/Phonegap/...
+              Native
             </Heading>
 
-            <Text>
-              Native vs Webview
-            </Text>
+            <List>
+              <ListItem>JS abstraction on top of Obj.C / Java</ListItem>
+              <ListItem>Better development experience</ListItem>
+              <ListItem>Native so fallback possible</ListItem>
+            </List>
           </Slide>
 
           <Slide>
@@ -281,43 +331,49 @@ export default class Presentation extends React.Component {
             </Heading>
 
             <Text>
-              jsx => xml to native views/components
+              jsx => xml to native components
             </Text>
+
+            <CodePane
+              style={{ fontSize: 18, marginTop: 30 }}
+              lang="jsx"
+              source={`<View />
+<Text />
+<Image />`}
+            />
           </Slide>
 
-          <Slide>
-            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              JS {"<=>"} Native
-            </Heading>
-
-            <Text>
-              bridge
-              Data communication via JSON
-              Events passed between Native and JS
-            </Text>
-          </Slide>
-
-          <Slide>
+          <Slide
+            notes={`
+            dasherized properties become camelCased
+            `}
+          >
             <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
               Styling
             </Heading>
-            <Text>
-              Flex box => native layout system
-              Unitless dimensions (different ppi)
-            </Text>
+            <List>
+              <ListItem>CSS-in-js</ListItem>
+              <ListItem>Unitless dimensions (different ppi)</ListItem>
+            </List>
           </Slide>
 
-          <Slide>
-            <Heading size={1} >
-              React-Native
-            </Heading>
-            <Text>
-              Data fetching => fetch or xmlHttp => native fetching methods
-            </Text>
-            <Text>
-              Data storage: temporary => component state, permanent => async storage
-            </Text>
-          </Slide>
+          <CodeSlide
+            style={{ fontSize: 25 }}
+            transition={[]}
+            lang="jsx"
+            code={require("raw!../assets/snippets/native-style")}
+            ranges={[
+              { loc: [0, 25], title: "Style examples" },
+              { loc: [22, 23], note: "Inline notation" },
+              { loc: [3, 17], note: "Stylesheet" },
+              { loc: [4, 7] },
+              { loc: [23, 24], note: "Single 'class'" },
+              { loc: [12, 16] },
+              { loc: [24, 25], note: "Combinations" },
+              { loc: [7, 12] },
+              { loc: [25, 26], note: "Overrides" }
+            ]}
+          />
 
           <Slide>
             <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
@@ -365,6 +421,30 @@ export default class Presentation extends React.Component {
             <Text>
               Set application in debug mode, open chrome devtools on the debugger localhost url,
               use breakpoints and console.log statements
+            </Text>
+          </Slide>
+
+          <Slide>
+            <Heading size={1} >
+              React-Native
+            </Heading>
+            <Text>
+              Data fetching => fetch or xmlHttp => native fetching methods
+            </Text>
+            <Text>
+              Data storage: temporary => component state, permanent => async storage
+            </Text>
+          </Slide>
+
+          <Slide>
+            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
+              JS {"<=>"} Native
+            </Heading>
+
+            <Text>
+              bridge
+              Data communication via JSON
+              Events passed between Native and JS
             </Text>
           </Slide>
 

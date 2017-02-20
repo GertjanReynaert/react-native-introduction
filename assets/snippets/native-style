@@ -1,0 +1,32 @@
+import React, { Component } from 'react';
+import { AppRegistry, StyleSheet, Text, View } from 'react-native';
+
+const styles = StyleSheet.create({
+  blue: {
+    color: 'blue',
+  },
+  bigRed: {
+    color: 'red',
+    fontWeight: 'bold',
+    fontSize: 20,
+  },
+  big: {
+    fontWeight: 'bold',
+    fontSize: 30,
+  },
+});
+
+class LotsOfStyles extends Component {
+  render() {
+    return (
+      <View>
+        <Text style={{ color: 'red' }}>just red</Text>
+        <Text style={styles.blue}>just blue</Text>
+        <Text style={[styles.blue, styles.big]}>bigblue</Text>
+        <Text style={[styles.bigRed, styles.big]}>bigRed, then even bigger</Text>
+      </View>
+    );
+  }
+}
+
+AppRegistry.registerComponent('LotsOfStyles', () => LotsOfStyles);

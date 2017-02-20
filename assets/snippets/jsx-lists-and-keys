@@ -13,6 +13,6 @@ const users = [
 
 const UserList = () => {
   return users.map(user => (
-    <p>{user.firstName} {user.lastName}</p>
+    <p key={user.id}>{user.firstName} {user.lastName}</p>
   ));
 };

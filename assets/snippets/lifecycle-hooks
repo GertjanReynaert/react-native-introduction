@@ -6,12 +6,47 @@ class FullName extends React.Component {
     };
   }
 
+  componentWillMount() {
+    console.log('Before first render');
+    // Place for starting initial data fetching
+  }
+
+  componentDidMount() {
+    console.log('After first render');
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log('When new props are comming in, before re-render');
+    // Example: Place to update state base on new props
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    // Performance escape hatch. When returning false, the render
+    // method won't be called.
+ 
+    // This is usefull if too many expensive re-renders happen
+    // in a too short timeframe
+  }
+
+  componentWillUpdate() {
+    // Before a re-render
+  }
+ 
+  componentDidUpdate() {
+    // After a re-render
+  }
+
+  componentWillUnmount() {
+    // Called when the component will be removed from the view
+    // Usefull for cleaning up pending timers, ...
+  }
+
   render() {
     const { firstName, middleName, lastName } = this.props;
 
     const name = this.state.full
-      ? \`\${firstName} \${middleName} \${lastName}\`
-      : \`\${firstName} \${lastName}\`;
+      ? `${firstName} ${middleName} ${lastName}`
+      : `${firstName} ${lastName}`;
 
     return (
       <p>{name}</p>
