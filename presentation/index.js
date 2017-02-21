@@ -9,6 +9,8 @@ import {
   Heading,
   ListItem,
   List,
+  Link,
+  Image,
   Spectacle,
   Slide,
   Text
@@ -27,10 +29,10 @@ require("spectacle/lib/themes/default/index.css");
 
 
 const images = {
-  city: require("../assets/city.jpg"),
-  kat: require("../assets/kat.png"),
-  logo: require("../assets/formidable-logo.svg"),
-  markdown: require("../assets/markdown.png")
+  flex: require("../assets/flexbox_flex.png"),
+  flexDirection: require("../assets/flex-direction.svg"),
+  justifyContent: require("../assets/justify-content.svg"),
+  alignItems: require("../assets/align-items.svg")
 };
 
 preloader(images);
@@ -339,6 +341,7 @@ Gesture Responder System
               lang="jsx"
               source={`<View />
 <Text />
+<TextInput />
 <Image />`}
             />
           </Slide>
@@ -374,6 +377,60 @@ Gesture Responder System
               { loc: [25, 26], note: "Overrides" }
             ]}
           />
+          <Slide>
+            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
+              Flexbox
+            </Heading>
+
+            <List>
+              <ListItem>flex</ListItem>
+              <ListItem>flexDirection</ListItem>
+              <ListItem>justifyContent</ListItem>
+              <ListItem>alignItems</ListItem>
+            </List>
+
+            <Link href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">
+              CSS-tricks cheat sheet
+            </Link>
+          </Slide>
+
+          <Slide>
+            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
+              Flexbox
+            </Heading>
+            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
+              Flex
+            </Heading>
+
+            <CodePane
+              style={{ fontSize: 18 }}
+              lang="js"
+              source={require("raw!../assets/snippets/flexbox_flex")}
+            />
+          </Slide>
+
+          <Slide>
+            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
+              Flexbox
+            </Heading>
+            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
+              Flex
+            </Heading>
+
+            <Image src={images.flex} height={300}/>
+          </Slide>
+
+          <Slide>
+            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
+              Networking
+            </Heading>
+
+            <List>
+              <ListItem>fetch</ListItem>
+              <ListItem>xmlHttpRequest</ListItem>
+              <ListItem>websockets</ListItem>
+            </List>
+          </Slide>
 
           <Slide>
             <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
@@ -418,34 +475,11 @@ Gesture Responder System
               Debugging
             </Heading>
 
-            <Text>
-              Set application in debug mode, open chrome devtools on the debugger localhost url,
-              use breakpoints and console.log statements
-            </Text>
-          </Slide>
-
-          <Slide>
-            <Heading size={1} >
-              React-Native
-            </Heading>
-            <Text>
-              Data fetching => fetch or xmlHttp => native fetching methods
-            </Text>
-            <Text>
-              Data storage: temporary => component state, permanent => async storage
-            </Text>
-          </Slide>
-
-          <Slide>
-            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              JS {"<=>"} Native
-            </Heading>
-
-            <Text>
-              bridge
-              Data communication via JSON
-              Events passed between Native and JS
-            </Text>
+            <List>
+              <ListItem>(Auto) Reloading</ListItem>
+              <ListItem>Redbox/Yellowbox</ListItem>
+              <ListItem>Chrome dev tools</ListItem>
+            </List>
           </Slide>
 
           <Slide>
