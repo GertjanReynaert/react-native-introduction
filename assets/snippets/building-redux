@@ -1,4 +1,4 @@
-const createStore = (initialState = {}, reducer) => {
+const createStore = (reducer, initialState = {}) => {
   let state = initialState;
   const listeners = [];
 
