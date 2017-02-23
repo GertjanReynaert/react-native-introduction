@@ -3,7 +3,6 @@ import React from "react";
 
 // Import Spectacle Core tags
 import {
-  Appear,
   CodePane,
   Deck,
   Heading,
@@ -29,10 +28,7 @@ require("spectacle/lib/themes/default/index.css");
 
 
 const images = {
-  flex: require("../assets/flexbox_flex.png"),
-  flexDirection: require("../assets/flex-direction.svg"),
-  justifyContent: require("../assets/justify-content.svg"),
-  alignItems: require("../assets/align-items.svg")
+  flex: require("../assets/flexbox_flex.png")
 };
 
 preloader(images);
@@ -47,6 +43,28 @@ const theme = createTheme({
   secondary: "Helvetica"
 });
 
+const H1 = ({ children }) => (
+  <Heading size={1} lineHeight={1} style={{ marginBottom: 30 }}>
+    {children}
+  </Heading>
+);
+
+const H2 = ({ children }) => (
+  <Heading size={2} textColor="tertiary" lineHeight={1} style={{ marginBottom: 30 }}>
+    {children}
+  </Heading>
+);
+
+const H4 = ({ children }) => (
+  <Heading size={4} textColor="tertiary" lineHeight={1} style={{ marginBottom: 30 }}>
+    {children}
+  </Heading>
+);
+
+const Code = ({ lang = "jsx", source }) => (
+  <CodePane style={{ fontSize: 18, marginBottom: 30 }} lang={lang} source={source}/>
+);
+
 export default class Presentation extends React.Component {
   render() {
     return (
@@ -57,108 +75,39 @@ export default class Presentation extends React.Component {
           transitionDuration={500}
         >
           <Slide>
-            <Heading size={1} lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              React
-            </Heading>
+            <H1>React</H1>
           </Slide>
 
           <Slide>
-            <Heading size={2} textColor="tertiary" lineHeight={1}>
-              {"<JSX />"}
-            </Heading>
+            <H2>{"<JSX />"}</H2>
           </Slide>
 
           <Slide>
-            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              Templates
-            </Heading>
+            <H4>Templates</H4>
 
-            <CodePane
-              style={{ fontSize: 18 }}
-              lang="xml"
-              source={require("raw!../assets/snippets/jsx")}
-            />
+            <Code source={require("raw!../assets/snippets/jsx")} />
           </Slide>
 
           <Slide>
-            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              Expressions
-            </Heading>
+            <H4>Expressions</H4>
 
-            <CodePane
-              style={{ fontSize: 18 }}
-              lang="jsx"
-              source={require("raw!../assets/snippets/jsx-expressions")}
-            />
+            <Code source={require("raw!../assets/snippets/jsx-expressions")} />
           </Slide>
 
           <Slide>
-            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              Conditional rendering
-            </Heading>
+            <H4>Conditional rendering</H4>
 
-            <CodePane
-              style={{ fontSize: 18 }}
-              lang="jsx"
-              source={require("raw!../assets/snippets/jsx-is-code")}
-            />
+            <Code source={require("raw!../assets/snippets/jsx-is-code")} />
           </Slide>
 
           <Slide>
-            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              Lists and keys
-            </Heading>
+            <H4>Lists and keys</H4>
 
-            <CodePane
-              style={{ fontSize: 18 }}
-              lang="jsx"
-              source={require("raw!../assets/snippets/jsx-lists-and-keys")}
-            />
+            <Code source={require("raw!../assets/snippets/jsx-lists-and-keys")} />
           </Slide>
 
-
-          {/*<Slide
-            notes={`
-            <ul>
-              <li>XML markup</li>
-              <li>Looks like html, but isn't</li>
-              <li>Compiles to Javascript</li>
-            </ul>
-            `}
-          >
-            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: '0 0 30px 0' }}>
-              JSX
-            </Heading>
-
-            <Layout>
-              <Fill style={{ marginRight: 20 }}>
-                <Text>From</Text>
-                <CodePane
-                  lang="xml"
-                  source={" <div className=\"sidebar\" /> "}
-                />
-              </Fill>
-
-              <Fill>
-                <Text>To</Text>
-                <CodePane
-                  lang="js"
-                  source={"React.createElement( 'div', { className: 'sidebar' }, null) "}
-                />
-              </Fill>
-            </Layout>
-          </Slide>*/}
-
-          {/*<Slide>
-            <Heading size={1} lineHeight={1} style={{ margin: '0 0 30px 0' }}>
-              Virtual DOM
-            </Heading>
-          </Slide>*/}
-
           <Slide>
-            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              Components
-            </Heading>
+            <H2>Components</H2>
 
             <List>
               <ListItem>React.createClass({})</ListItem>
@@ -168,41 +117,24 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              Components
-            </Heading>
-            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              Stateless
-            </Heading>
+            <H2>Components</H2>
+            <H4>Stateless</H4>
 
-            <CodePane
-              style={{ margin: "0 0 30px 0", fontSize: 18 }}
-              lang="jsx"
-              source={require("raw!../assets/snippets/components-stateless")}
-            />
-
-            <Appear>
-              <CodePane
-                style={{ fontSize: 18 }}
-                lang="jsx"
-                source={require("raw!../assets/snippets/components-stateless-better")}
-              />
-            </Appear>
+            <Code source={require("raw!../assets/snippets/components-stateless")} />
           </Slide>
 
           <Slide>
-            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              Components
-            </Heading>
-            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              Class
-            </Heading>
+            <H2>Components</H2>
+            <H4>Stateless</H4>
 
-            <CodePane
-              style={{ fontSize: 18 }}
-              lang="jsx"
-              source={require("raw!../assets/snippets/components-class")}
-            />
+            <Code source={require("raw!../assets/snippets/components-stateless-better")} />
+          </Slide>
+
+          <Slide>
+            <H2>Components</H2>
+            <H4>Class</H4>
+
+            <Code source={require("raw!../assets/snippets/components-class")} />
           </Slide>
 
           <CodeSlide
@@ -247,21 +179,15 @@ export default class Presentation extends React.Component {
             Real method calls, not method names that then get dynamically invoked
             `}
           >
-            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              Event handling
-            </Heading>
+            <H4>Event handling</H4>
           </Slide>
 
           <Slide notes="State + props, context as fallback, global js context, Redux, MobX, ...">
-            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              No data management
-            </Heading>
+            <H4>No data management</H4>
           </Slide>
 
           <Slide notes="Essential for declarative nature + performance, ideal for RN abstraction">
-            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              Virtual DOM
-            </Heading>
+            <H4>Virtual DOM</H4>
           </Slide>
 
           <Slide
@@ -300,15 +226,11 @@ Platform Specific Code
 Gesture Responder System
             `}
           >
-            <Heading size={1} lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              React Native
-            </Heading>
+            <H1>React Native</H1>
           </Slide>
 
           <Slide>
-            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              Native
-            </Heading>
+            <H2>Native</H2>
 
             <List>
               <ListItem>JS abstraction on top of Obj.C / Java</ListItem>
@@ -318,9 +240,7 @@ Gesture Responder System
           </Slide>
 
           <Slide>
-            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              Virtual ...
-            </Heading>
+            <H4>Virtual ...</H4>
 
             <Text>
               virtual dom => virtual components
@@ -328,22 +248,13 @@ Gesture Responder System
           </Slide>
 
           <Slide>
-            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              React Native
-            </Heading>
+            <H4>React Native</H4>
 
             <Text>
               jsx => xml to native components
             </Text>
 
-            <CodePane
-              style={{ fontSize: 18, marginTop: 30 }}
-              lang="jsx"
-              source={`<View />
-<Text />
-<TextInput />
-<Image />`}
-            />
+            <Code source={require("raw!../assets/snippets/jsx-native-elements")} />
           </Slide>
 
           <Slide
@@ -351,9 +262,8 @@ Gesture Responder System
             dasherized properties become camelCased
             `}
           >
-            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              Styling
-            </Heading>
+            <H2>Styling</H2>
+
             <List>
               <ListItem>CSS-in-js</ListItem>
               <ListItem>Unitless dimensions (different ppi)</ListItem>
@@ -378,9 +288,7 @@ Gesture Responder System
             ]}
           />
           <Slide>
-            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              Flexbox
-            </Heading>
+            <H2>Flexbox</H2>
 
             <List>
               <ListItem>flex</ListItem>
@@ -395,35 +303,21 @@ Gesture Responder System
           </Slide>
 
           <Slide>
-            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              Flexbox
-            </Heading>
-            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              Flex
-            </Heading>
+            <H2>Flexbox</H2>
+            <H4>Flex</H4>
 
-            <CodePane
-              style={{ fontSize: 18 }}
-              lang="js"
-              source={require("raw!../assets/snippets/flexbox_flex")}
-            />
+            <Code source={require("raw!../assets/snippets/flexbox_flex")} />
           </Slide>
 
           <Slide>
-            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              Flexbox
-            </Heading>
-            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              Flex
-            </Heading>
+            <H2>Flexbox</H2>
+            <H4>Flex</H4>
 
             <Image src={images.flex} height={300}/>
           </Slide>
 
           <Slide>
-            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              Networking
-            </Heading>
+            <H2>Networking</H2>
 
             <List>
               <ListItem>fetch</ListItem>
@@ -433,33 +327,17 @@ Gesture Responder System
           </Slide>
 
           <Slide>
-            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              Platform specific
-            </Heading>
-            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              Inline ternary
-            </Heading>
+            <H2>Platform specific</H2>
+            <H4>Inline ternary</H4>
 
-            <CodePane
-              style={{ fontSize: 18 }}
-              lang="js"
-              source="Platform.OS === 'android' ? 'android text' : 'ios text'"
-            />
+            <Code source="Platform.OS === 'android' ? 'android text' : 'ios text'" />
           </Slide>
 
           <Slide>
-            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              Platform specific
-            </Heading>
-            <Heading size={4} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              Extension based
-            </Heading>
+            <H2>Platform specific</H2>
+            <H4>Extension based</H4>
 
-            <CodePane
-              style={{ fontSize: 18 }}
-              lang="js"
-              source="import Component from './Component'"
-            />
+            <Code source="import Component from './Component'" />
             <List>
               <ListItem>component.ios.js</ListItem>
               <ListItem>component.android.js</ListItem>
@@ -471,9 +349,7 @@ Gesture Responder System
           </Slide>
 
           <Slide>
-            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              Debugging
-            </Heading>
+            <H2>Debugging</H2>
 
             <List>
               <ListItem>(Auto) Reloading</ListItem>
@@ -483,9 +359,7 @@ Gesture Responder System
           </Slide>
 
           <Slide>
-            <Heading size={2} textColor="tertiary" lineHeight={1} style={{ margin: "0 0 30px 0" }}>
-              Thinking in React
-            </Heading>
+            <H2>Thinking in React</H2>
 
             <List>
               <ListItem>Step 1: UI to component hierarchy</ListItem>
@@ -496,6 +370,29 @@ Gesture Responder System
             </List>
           </Slide>
 
+          <Slide>
+            <H1>Workshop 1</H1>
+          </Slide>
+
+          <Slide>
+            <H2>Todo app</H2>
+            <H4>1. Setup</H4>
+          </Slide>
+
+          <Slide notes="Goal: iOS todo app clone, failed, switch is more native, good excercise for styles/state/touch handling">
+            <H2>Todo app</H2>
+            <H4>2. Checkbox</H4>
+          </Slide>
+
+          <Slide>
+            <H2>Todo app</H2>
+            <H4>3. TodoItem view</H4>
+          </Slide>
+
+          <Slide>
+            <H2>Todo app</H2>
+            <H4>4. TodoItem edit view</H4>
+          </Slide>
         </Deck>
       </Spectacle>
     );
