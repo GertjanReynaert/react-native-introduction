@@ -62,7 +62,7 @@ const H4 = ({ children }) => (
 );
 
 const Code = ({ lang = "jsx", source }) => (
-  <CodePane style={{ fontSize: 18, marginBottom: 30 }} lang={lang} source={source}/>
+  <CodePane style={{ fontSize: 18, marginBottom: 30, borderRadius: 5 }} lang={lang} source={source}/>
 );
 
 export default class Presentation extends React.Component {
@@ -74,7 +74,7 @@ export default class Presentation extends React.Component {
           transition={["fade", "slide"]}
           transitionDuration={500}
         >
-          <Slide>
+          <Slide bgColor="secondary">
             <H1>React</H1>
           </Slide>
 
@@ -143,7 +143,7 @@ export default class Presentation extends React.Component {
             lang="jsx"
             code={require("raw!../assets/snippets/props-and-state")}
             ranges={[
-              { loc: [0, 25], title: "Props & State" },
+              { loc: [0, 250], title: "Props & State" },
               { loc: [1, 3], title: "Props" },
               { loc: [18, 19], title: "Props" },
               { loc: [3, 6], title: "State" },
@@ -191,39 +191,12 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide
+            bgColor="secondary"
             notes={`
-Getting Started
-Tutorial
-Props
-State
-Style
-Height and Width
-Layout with Flexbox
-Handling Text Input
-Using a ScrollView
-Using a ListView
-Networking
-Using Navigators
-More Resources
-
-Integration With Existing Apps
-Colors
-Images
 Handling Touches
 Animations
 Accessibility
-Timers
-Direct Manipulation
-Debugging
 Testing
-Running On Device
-JavaScript Environment
-Navigation
-Performance
-Understanding the CLI
-Upgrading
-Platform Specific Code
-Gesture Responder System
             `}
           >
             <H1>React Native</H1>
@@ -276,7 +249,7 @@ Gesture Responder System
             lang="jsx"
             code={require("raw!../assets/snippets/native-style")}
             ranges={[
-              { loc: [0, 25], title: "Style examples" },
+              { loc: [0, 250], title: "Style examples" },
               { loc: [22, 23], note: "Inline notation" },
               { loc: [3, 17], note: "Stylesheet" },
               { loc: [4, 7] },
@@ -370,7 +343,7 @@ Gesture Responder System
             </List>
           </Slide>
 
-          <Slide>
+          <Slide bgColor="secondary">
             <H1>Workshop 1</H1>
           </Slide>
 
@@ -392,6 +365,176 @@ Gesture Responder System
           <Slide>
             <H2>Todo app</H2>
             <H4>4. TodoItem edit view</H4>
+          </Slide>
+
+          <Slide>
+            <H2>Todo app</H2>
+            <H4>5. Checkbox state => TodoItem</H4>
+          </Slide>
+
+          <Slide>
+            <H2>Todo app</H2>
+            <H4>6. TodoItem list</H4>
+          </Slide>
+
+          <Slide>
+            <H2>Todo app</H2>
+            <H4>7. Adding TodoItems</H4>
+          </Slide>
+
+          <Slide>
+            <H2>Todo app</H2>
+            <H4>8. Empty list fallback</H4>
+          </Slide>
+
+          <Slide>
+            <H2>Todo app</H2>
+            <H4>9. ScrollView</H4>
+          </Slide>
+
+          <Slide>
+            <H2>Todo app</H2>
+            <H4>10. Listview</H4>
+          </Slide>
+
+          <Slide bgColor="secondary">
+            <H1>Redux</H1>
+          </Slide>
+
+          <Slide>
+            <H2>Three principles</H2>
+
+            <List>
+              <ListItem>Single Source of Truth</ListItem>
+              <ListItem>State is read only</ListItem>
+              <ListItem>State changes by pure functions</ListItem>
+            </List>
+          </Slide>
+
+          <Slide>
+            <H2>Benefits</H2>
+
+            <List>
+              <ListItem>Easy persistence</ListItem>
+              <ListItem>Easy testability</ListItem>
+              <ListItem>Easy abstraction for async work</ListItem>
+              <ListItem>Mocking API for prototyping</ListItem>
+            </List>
+          </Slide>
+
+          <Slide>
+            <H2>React data flow</H2>
+
+            <Code source="onClick => setState => newState => render" />
+          </Slide>
+
+          <Slide>
+            <H2>Redux data flow</H2>
+            <Code source="onClick => action => reducer => newState => render" />
+          </Slide>
+
+          <Slide>
+            <H2>Reducer</H2>
+
+            <Code source="const reducer = (oldState, action) => newState" />
+            <Code source="oldState != newState" />
+          </Slide>
+
+          <Slide bgColor="secondary">
+            <H1>Workshop 2</H1>
+          </Slide>
+
+          <Slide>
+            <H2>Todo app</H2>
+            <H4>1. Building redux</H4>
+          </Slide>
+
+          <CodeSlide
+            style={{ fontSize: 25 }}
+            transition={[]}
+            lang="jsx"
+            code={require("raw!../assets/snippets/building-redux")}
+            ranges={[
+              { loc: [0, 250], title: "createStore" },
+              { loc: [0, 1] },
+              { loc: [1, 2] },
+              { loc: [2, 3] },
+              { loc: [4, 8] },
+              { loc: [9, 12] },
+              { loc: [13, 14] },
+              { loc: [15, 16] }
+            ]}
+          />
+
+          <Slide>
+            <H2>Todo app</H2>
+            <H4>2. Decide state structure</H4>
+            <Code source={require("raw!../assets/snippets/building-state")} />
+          </Slide>
+
+          <Slide>
+            <H2>Todo app</H2>
+            <H4>3. Building reducer</H4>
+          </Slide>
+
+          <CodeSlide
+            style={{ fontSize: 25 }}
+            transition={[]}
+            lang="jsx"
+            code={require("raw!../assets/snippets/building-reducers")}
+            ranges={[
+              { loc: [0, 50], title: "Reducers" },
+              { loc: [0, 1] },
+              { loc: [1, 2] },
+              { loc: [46, 47] }, // default
+              { loc: [2, 14] }, // add
+              { loc: [3, 4] },
+              { loc: [4, 8] },
+              { loc: [9, 13] },
+              { loc: [14, 33] }, // edit
+              { loc: [15, 18] },
+              { loc: [18, 19] },
+              { loc: [19, 23] },
+              { loc: [24, 32] },
+              { loc: [33, 46] }, // delete
+              { loc: [34, 37] },
+              { loc: [38, 45] },
+              { loc: [0, 50], title: "Reducers" }
+            ]}
+          />
+
+          <Slide>
+            <H2>Todo app</H2>
+            <H4>4. Wiring</H4>
+          </Slide>
+
+          <Slide>
+            <H2>Todo app</H2>
+            <H4>5. Redux</H4>
+          </Slide>
+
+          <Slide>
+            <H2>Todo app</H2>
+            <H4>6. Containers</H4>
+          </Slide>
+
+          <Slide>
+            <H2>Todo app</H2>
+            <H4>7. React-Redux</H4>
+          </Slide>
+
+          <Slide bgColor="secondary">
+            <H1>Redux Middleware</H1>
+          </Slide>
+
+          <Slide notes="other action / action after async work / no action / multiple actions at once">
+            <H2>Redux data flow</H2>
+
+            <Code source="action => middleware => ... => reducer" />
+          </Slide>
+
+          <Slide bgColor="secondary">
+            <H1>Workshop 3</H1>
           </Slide>
         </Deck>
       </Spectacle>

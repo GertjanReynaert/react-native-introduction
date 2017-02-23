@@ -23,7 +23,7 @@ class LotsOfStyles extends Component {
         <Text style={{ color: 'red' }}>just red</Text>
         <Text style={styles.blue}>just blue</Text>
         <Text style={[styles.blue, styles.big]}>bigblue</Text>
-        <Text style={[styles.bigRed, styles.big]}>bigRed, then even bigger</Text>
+        <Text style={[styles.bigRed, styles.big]}>bigRed, but even bigger</Text>
       </View>
     );
   }
